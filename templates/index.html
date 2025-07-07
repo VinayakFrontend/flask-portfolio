@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinayak Gupta | Web Developer</title>
+
+  <!-- Meta Tags -->
+  <meta name="title" content="Vinayak Gupta | Web Developer" />
+  <meta name="description" content="Vinayak Gupta is a skilled Web Backend developer" />
+  <meta name="author" content="Vinayak Gupta" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="{{ url_for('static', filename='img/favicons/favicon.ico') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/favicons/apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicons/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicons/favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='img/favicons/site.webmanifest') }}">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/748a07e087.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="{{ url_for('static', filename='img/logo/v-logo.png') }}" alt="logo">
+    </div>
+    <input type="checkbox" id="menu">
+    <label for="menu" class="menu-icon">&#9776;</label>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skill">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact"><button class="avbtn">Hire Me</button></a>
+  </header>
+
+  <!-- About Section -->
+  <main>
+    <section class="hero-section" id="about">
+      <div class="webdev">
+        <img src="{{ url_for('static', filename='img/webdev.avif') }}" alt="Webdev">
+      </div>
+      <div class="about">
+        <h1 class="heading">Vinayak Gupta</h1>
+        <h2 class="sub-heading">Web Developer</h2>
+        <p>Hello! I'm Vinayak, a creative web frontend and backend developer experienced in building responsive, SEO-friendly, and user-focused websites.</p>
+        <a href="#" class="btn-link" target="_blank">Download Resume</a>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skill">
+      <div class="headings">
+        <span class="title">My Skills & Tools</span>
+        <h2 class="heading">Expertise That Drives Innovation</h2>
+        <p>Modern technologies for fast, responsive, and optimized websites.</p>
+      </div>
+      <div class="myskills">
+        {% for skill in ['html-5', 'css-3', 'javascript', 'bootstrap', 'php', 'git', 'github', 'vscode'] %}
+        <div class="sbox">
+          <img src="{{ url_for('static', filename='img/icons/' + skill + '.webp') }}" alt="{{ skill }}">
+          <div class="sname">{{ skill.upper() }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Projects Section
+    <section id="projects">
+      <div class="headings">
+        <span class="title">Projects</span>
+        <h2 class="heading">Showcasing Innovation & Creativity</h2>
+        <p>Explore a few highlighted projects crafted with modern tools.</p>
+      </div>
+      <div class="projects">
+        <div class="project-item">
+          <a href="https://vsnapinsta.vercel.app/" target="_blank">
+            <img src="{{ url_for('static', filename='img/projects/vsnapinsta.png') }}" alt="Vsnapinsta">
+            <h2 class="project-name">Vsnapinsta</h2>
+          </a>
+        </div>
+        <!-- Add more projects as needed -->
+      </div>
+    </section> -->
+
+    <!-- Contact Section -->
+   <section id="contact"> 
+  <div class="contact-info">
+    <div class="contact-details">
+      <h2 class="heading">Let’s Connect & Collaborate</h2>
+      <p>Want to build something amazing? Get in touch.</p>
+      <a href="tel:+919167140832"><i class="fa fa-phone"></i> +91 9167140832</a><br>
+      <a href="mailto:vinayakgupta1614@gmail.com"><i class="fa fa-envelope"></i> vinayakgupta1614@gmail.com</a><br>
+      <a href="https://maps.app.goo.gl/GWHWNkpCZqqP6UjC6" target="_blank"><i class="fa fa-map-marker-alt"></i> Vikhroli East, Mumbai</a>
+    </div>
+    <div class="contact-form">
+      <form action="/contact" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="number" name="phone" placeholder="Your Phone" required>
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn-link">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-section">
+      <div class="footer-logo">
+        <img src="{{ url_for('static', filename='img/logo/v-logo.png') }}" alt="logo">
+        <p>Designing modern, SEO-friendly websites with user-first experience.</p>
+      </div>
+      <div class="quick-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skill">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="quick-links">
+        <h3>Social Links</h3>
+        <ul>
+          <li><i class="fa-brands fa-linkedin-in"></i> <a href="#">LinkedIn</a></li>
+          <li><i class="fa-brands fa-github"></i> <a href="#">GitHub</a></li>
+          <li><i class="fa-brands fa-whatsapp"></i> <a href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copywrite">
+      <p>&copy; 2025 Vinayak Gupta. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Chatbot -->
+  <div class="chatbot-container">
+    <div class="chatbot-toggle" onclick="toggleChatbot()">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+    <div class="chatbot-box" id="chatbotBox">
+      <div class="chatbot-header">
+        <h4>Chat with VinayakBot</h4>
+        <button onclick="toggleChatbot()">✖</button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages"></div>
+      <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Type a message..." onkeydown="handleKey(event)">
+        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="{{ url_for('static', filename='js/javascript.js') }}"></script>
+</body>
+</html>
